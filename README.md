@@ -1,75 +1,71 @@
-# Kerala Job Hub 🚀
+# Kerala Job Hub
 
-Kerala Job Hub is a simple job listing website focused on **Kochi and nearby areas**.
-Our goal is to help job seekers find **latest job vacancies quickly and easily**.
+Kerala Job Hub is a static, SEO-focused job listing website targeting Kochi, Kerala. The site is designed as a lead-generation business:
 
----
+- Job seekers browse jobs for free
+- Employers pay to post jobs from Rs.199 to Rs.999
+- Applications happen through WhatsApp or external links
 
-## 🌍 What We Offer
+## Pages included
 
-* Jobs in Kochi
-* Infopark job listings
-* Part-time jobs
-* Fresher jobs
-* Work from home jobs
-* Urgent job vacancies
+- `index.html`
+- `jobs-in-kochi.html`
+- `part-time-jobs-kochi.html`
+- `infopark-jobs-kochi.html`
+- `fresher-jobs-kochi.html`
+- `urgent-jobs-kochi.html`
+- `accountant-jobs-kochi.html`
+- `driver-jobs-kochi.html`
+- `data-entry-jobs-kochi.html`
+- `digital-marketing-jobs-kochi.html`
+- `work-from-home-jobs-kochi.html`
+- `night-shift-jobs-kochi.html`
+- `part-time-jobs-for-students-kochi.html`
 
----
+## Seed keywords used for the homepage
 
-## 📍 Popular Pages
+- jobs in kochi
+- job vacancies in kochi
+- part time jobs in kochi
+- infopark jobs kochi
+- jobs in kochi for freshers
+- work from home jobs in kochi
+- urgent job vacancies in kochi
+- accountant jobs in kochi
+- driver jobs in kochi
+- data entry jobs in kochi
+- digital marketing jobs in kochi
+- night shift jobs in kochi
+- part time jobs in kochi for students
 
-* /jobs-in-kochi
-* /part-time-jobs-kochi
-* /infopark-jobs-kochi
-* /fresher-jobs-kochi
-* /urgent-jobs-kochi
+## Deploy to GitHub Pages
 
----
+1. Create a GitHub repository and push these files.
+2. In the repository, open `Settings` > `Pages`.
+3. Under `Build and deployment`, choose `Deploy from a branch`.
+4. Select the `main` branch and the `/ (root)` folder.
+5. Save the settings and wait for GitHub Pages to publish the site.
 
-## 🎯 Our Mission
+## Connect the custom domain
 
-To build a **simple, fast, and SEO-driven job platform** where users can find jobs without confusion.
+The repo already includes a `CNAME` file with:
 
----
+`keralajobhub.com`
 
-## ⚡ Tech Stack
+To point the domain to GitHub Pages:
 
-* HTML (Static Pages)
-* GitHub Pages (Hosting)
-* SEO-Optimized Structure
+1. Go to your domain DNS settings.
+2. Add these four `A` records for the root domain:
+   - `185.199.108.153`
+   - `185.199.109.153`
+   - `185.199.110.153`
+   - `185.199.111.153`
+3. Add a `CNAME` record for `www` pointing to your GitHub Pages host, usually `yourusername.github.io`.
+4. In GitHub repository `Settings` > `Pages`, set the custom domain to `keralajobhub.com`.
+5. Enable HTTPS after the DNS records are active.
 
----
+## Before launch
 
-## 🚀 Live Website
-
-Coming soon…
-
----
-
-## 💼 For Employers
-
-Want to post a job?
-
-Contact us to list your job and get candidates quickly.
-
----
-
-## 📈 Future Plan
-
-* Daily job updates
-* Category-based job listings
-* Company-specific pages
-* Paid job postings
-
----
-
-## 🤝 Contributing
-
-This is a personal project. Contributions are not open right now.
-
----
-
-## 📧 Contact
-
-Kerala Job Hub Team
-Kochi, Kerala
+- Replace the generic WhatsApp links with your actual business WhatsApp number or listing-specific apply links.
+- Update sample jobs with real postings collected manually.
+- Keep page content fresh to improve trust and SEO performance.
