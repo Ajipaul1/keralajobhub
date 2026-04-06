@@ -728,3 +728,145 @@ h3 {
 .business-seo-section .hero-text {
   max-width: 70rem;
 }
+
+.company-hero-layout,
+.company-detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.25rem;
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid rgba(23, 94, 68, 0.2);
+  box-shadow: none;
+}
+
+.button-secondary:hover {
+  background: rgba(23, 94, 68, 0.08);
+}
+
+.company-photo-card,
+.company-detail-card,
+.company-stat,
+.company-empty-state {
+  margin: 0;
+  padding: 1.4rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.company-photo-card svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: calc(var(--radius) - 0.35rem);
+}
+
+.company-photo-card figcaption {
+  margin-top: 0.85rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.company-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.company-stat h3,
+.company-empty-state h3,
+.detail-subtitle {
+  margin: 0 0 0.7rem;
+  color: var(--primary-dark);
+}
+
+.company-stat p,
+.company-empty-state p,
+.company-note {
+  margin: 0;
+}
+
+.company-note {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.company-meta-list {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+}
+
+.company-meta-list div {
+  display: grid;
+  gap: 0.25rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.company-meta-list div:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.company-meta-list dt {
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+.company-meta-list dd {
+  margin: 0;
+  color: var(--text);
+}
+
+.inline-list,
+.social-list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.inline-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1.5rem;
+}
+
+.inline-list li {
+  color: var(--text);
+}
+
+.social-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.company-empty-state {
+  max-width: 58rem;
+}
+
+.company-empty-state .inline-list {
+  margin: 1rem 0 0;
+}
+
+@media (max-width: 980px) {
+  .company-hero-layout,
+  .company-detail-grid,
+  .company-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
