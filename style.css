@@ -705,3 +705,26 @@ h3 {
   margin: 0;
   font-weight: 600;
 }
+
+.trust-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.2rem;
+}
+
+.trust-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 0.9rem;
+  border-radius: 999px;
+  background: #eef4fb;
+  border: 1px solid var(--line);
+  color: var(--primary-dark);
+  font-weight: 800;
+  font-size: 0.92rem;
+}
+
+.business-seo-section .hero-text {
+  max-width: 70rem;
+}
