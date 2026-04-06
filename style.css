@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --bg: #f5f7fb;
   --surface: #ffffff;
   --surface-alt: #eef4fb;
@@ -659,4 +659,49 @@ h3 {
   .brand-with-logo {
     max-width: 280px;
   }
+}
+
+.contact-note {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.contact-note a {
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.cta-section {
+  padding-bottom: 4rem;
+}
+
+.cta-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.7rem;
+  background: linear-gradient(135deg, #154936, #216c4f);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.cta-box h2,
+.cta-box p,
+.cta-box .price-line,
+.cta-box .contact-note,
+.cta-box .contact-note a {
+  color: #fff;
+}
+
+.price-line {
+  margin: 0;
+  font-weight: 700;
+}
+
+.cta-note {
+  margin: 0;
+  font-weight: 600;
 }
