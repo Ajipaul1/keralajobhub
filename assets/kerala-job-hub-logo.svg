@@ -1,0 +1,22 @@
+<svg width="720" height="168" viewBox="0 0 720 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="kgh-paper" x1="25" y1="20" x2="145" y2="145" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#173B64"/>
+      <stop offset="1" stop-color="#0B1F38"/>
+    </linearGradient>
+    <linearGradient id="kgh-accent" x1="52" y1="54" x2="115" y2="117" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF9760"/>
+      <stop offset="1" stop-color="#FF5D4F"/>
+    </linearGradient>
+  </defs>
+  <path d="M33 18C22.5066 18 14 26.5066 14 37V129C14 139.493 22.5066 148 33 148H114.546C119.735 148 124.712 145.95 128.39 142.294L157.844 113.006C161.442 109.429 163.467 104.566 163.467 99.4939V37C163.467 26.5066 154.961 18 144.467 18H33Z" fill="url(#kgh-paper)"/>
+  <path d="M109 22V58C109 68.4934 117.507 77 128 77H160" stroke="#93D0FF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="35" y="61" width="54" height="9" rx="4.5" fill="#93D0FF"/>
+  <rect x="35" y="82" width="72" height="9" rx="4.5" fill="#93D0FF" fill-opacity="0.76"/>
+  <rect x="35" y="103" width="44" height="9" rx="4.5" fill="#93D0FF" fill-opacity="0.58"/>
+  <path d="M73.5 126L56 108.5L64.5 100L73 108.5L96 85.5L105.5 95L73.5 126Z" fill="url(#kgh-accent)"/>
+  <circle cx="133" cy="113" r="15" fill="#F6FAFF"/>
+  <path d="M131 104V114H139" stroke="#12365C" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="193" y="78" fill="#102B44" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="56" font-weight="800" letter-spacing="-1.2">Kerala Job Hub</text>
+  <text x="194" y="116" fill="#5A687A" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" letter-spacing="2.4">KOCHI JOB SEARCH PLATFORM</text>
+</svg>
