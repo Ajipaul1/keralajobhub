@@ -1,373 +1,136 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kerala Job Hub | Jobs in Kochi, Infopark, Part-Time and Fresher Roles</title>
-  <meta name="description" content="Kerala Job Hub helps candidates find jobs in Kochi, Infopark, part-time, fresher, and urgent vacancies while helping employers post paid listings from Rs.199 to Rs.999.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://keralajobhub.com/">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="shortcut icon" href="assets/favicon.svg">
-  <link rel="stylesheet" href="style.css">
-  <script src="assets/site.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerala Job Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'forest': '#1B4332',
+                        'accent': '#52B788',
+                        'leaf': '#40916C',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-  <header class="site-header">
-    <div class="announcement-bar">
-      <div class="container announcement-inner">
-        <p data-i18n="launchBar">We are in the launch stage. Support Kerala Job Hub on WhatsApp and we will notify you free when relevant jobs are added.</p>
-        <a class="light-link" href="https://wa.me/916282520339?text=Hi%20Kerala%20Job%20Hub%2C%20please%20notify%20me%20when%20new%20jobs%20are%20available." data-i18n="launchLink">Send a WhatsApp message</a>
-      </div>
-    </div>
-    <div class="container header-wrap">
-      <a class="brand brand-with-logo" href="index.html" aria-label="Kerala Job Hub home">
-        <img class="brand-logo" src="assets/kerala-job-hub-logo.svg" alt="Kerala Job Hub">
-      </a>
-      <div class="header-right">
-        <nav class="site-nav" aria-label="Primary">
-          <a href="jobs-in-kochi.html" data-i18n="navJobs">Jobs in Kochi</a>
-          <a href="part-time-jobs-kochi.html" data-i18n="navPartTime">Part-Time</a>
-          <a href="infopark-jobs-kochi.html" data-i18n="navInfopark">Infopark</a>
-          <a href="fresher-jobs-kochi.html" data-i18n="navFreshers">Freshers</a>
-          <a class="button button-small" href="#pricing" data-i18n="navPost">Post a Job</a>
+<body class="bg-white text-black font-sans m-0 p-0 min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-forest text-white rounded-b-xl px-4 py-3">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="assets/kerala-job-hub-logo.svg" alt="Logo" class="w-8 h-8 mr-2">
+                <h1 class="text-lg font-bold">Kerala Job Hub</h1>
+            </div>
+            <button class="text-white text-2xl">☰</button>
+        </div>
+        <nav class="mt-2">
+            <div class="flex space-x-4 text-sm">
+                <a href="#" class="text-white hover:text-accent">Your Resume</a>
+                <a href="#" class="text-white hover:text-accent">Companies</a>
+                <a href="#" class="text-white hover:text-accent">Help</a>
+            </div>
         </nav>
-        <label class="lang-switch" for="languageSelect">
-          <span data-i18n="langLabel">Language</span>
-          <select id="languageSelect" class="lang-select">
-            <option value="en">English</option>
-            <option value="ml">Malayalam</option>
-            <option value="hi">Hindi</option>
-          </select>
-        </label>
-      </div>
-    </div>
-  </header>
+    </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid hero-grid-home">
-        <div class="hero-main">
-          <p class="eyebrow" data-i18n="heroEyebrow">Kochi job portal for daily updates</p>
-          <h1 data-i18n="heroTitle">Find local jobs in Kochi without the noise.</h1>
-          <p class="hero-text" data-i18n="heroText">Kerala Job Hub is built for Kochi, Infopark, freshers, part-time roles, and fast WhatsApp applications.</p>
-          <div class="hero-actions">
-            <a class="button" href="jobs-in-kochi.html" data-i18n="browseJobs">Browse Jobs</a>
-            <a class="button button-secondary" href="#pricing" data-i18n="heroPost">Post a Job</a>
-          </div>
-          <ul class="hero-points">
-            <li data-i18n="point1">Free job search for candidates</li>
-            <li data-i18n="point2">Employer plans from Rs.199 to Rs.999</li>
-            <li data-i18n="point3">Manual review and local-first visibility</li>
-          </ul>
-          <div class="trust-strip">
-            <span class="trust-chip">Verified employers only</span>
-            <span class="trust-chip">Manual job approval</span>
-            <span class="trust-chip">No consultancy / no fees</span>
-          </div>
+    <!-- Search Section -->
+    <section class="px-4 py-4">
+        <div class="relative">
+            <input type="text" placeholder="Search jobs..." class="w-full pl-10 pr-20 py-3 border border-gray-300 rounded-lg text-sm">
+            <svg class="absolute left-3 top-3 w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.817A6 6 0 012 8z" clip-rule="evenodd"></path>
+            </svg>
+            <button class="absolute right-2 top-2 bg-accent text-white px-4 py-1 rounded-lg text-sm font-medium">Find Jobs Now</button>
+        </div>
+    </section>
 
-          <div class="search-panel">
-            <div class="section-heading compact">
-              <p class="eyebrow" data-i18n="searchEyebrow">Job search</p>
-              <h2 data-i18n="searchTitle">Search the right page fast</h2>
-              <p class="search-hint" data-i18n="searchHint">Use filters to jump to the most relevant job page or landing page.</p>
+    <!-- Popular Job Searches -->
+    <section class="px-4 py-2">
+        <h2 class="text-lg font-bold mb-3">Popular Job Searches</h2>
+        <div class="flex flex-wrap gap-2">
+            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Software Engineer</span>
+            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Data Analyst</span>
+            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Designer</span>
+            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Marketing</span>
+            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Sales</span>
+            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Developer</span>
+        </div>
+    </section>
+
+    <!-- Featured Jobs -->
+    <section class="px-4 py-2">
+        <h2 class="text-lg font-bold mb-3">Featured Job</h2>
+        <div class="flex space-x-4 overflow-x-auto pb-2">
+            <div class="bg-white shadow-md rounded-lg p-4 min-w-[250px] border">
+                <h3 class="font-semibold text-sm">Senior Developer</h3>
+                <p class="text-gray-600 text-xs mt-1">Short description here.</p>
+                <button class="mt-3 bg-accent text-white px-3 py-1 rounded-lg text-sm">Apply on WhatsApp</button>
             </div>
-            <form id="jobSearchForm">
-              <div class="search-grid">
-                <label>
-                  <span data-i18n="searchKeywordLabel">Keyword</span>
-                  <input id="searchKeyword" type="text" data-i18n-placeholder="searchKeywordPlaceholder" placeholder="Example: fresher, driver, Infopark">
-                </label>
-                <label>
-                  <span data-i18n="searchTypeLabel">Job type</span>
-                  <select id="searchType">
-                    <option value="all" data-i18n="typeAll">Any type</option>
-                    <option value="full-time" data-i18n="typeFullTime">Full-time</option>
-                    <option value="part-time" data-i18n="typePartTime">Part-time</option>
-                    <option value="remote" data-i18n="typeRemote">Work from home</option>
-                    <option value="night" data-i18n="typeNight">Night shift</option>
-                  </select>
-                </label>
-                <label>
-                  <span data-i18n="searchLocationLabel">Location</span>
-                  <select id="searchLocation">
-                    <option value="all" data-i18n="locationAll">Any location</option>
-                    <option value="kochi" data-i18n="locationKochi">Kochi</option>
-                    <option value="infopark" data-i18n="locationInfopark">Infopark</option>
-                    <option value="kakkanad" data-i18n="locationKakkanad">Kakkanad</option>
-                    <option value="edappally" data-i18n="locationEdappally">Edappally</option>
-                    <option value="remote" data-i18n="locationRemote">Remote</option>
-                  </select>
-                </label>
-                <label>
-                  <span data-i18n="searchExperienceLabel">Experience</span>
-                  <select id="searchExperience">
-                    <option value="all" data-i18n="expAll">Any level</option>
-                    <option value="fresher" data-i18n="expFresher">Freshers</option>
-                    <option value="experienced" data-i18n="expExperienced">Experienced</option>
-                  </select>
-                </label>
-              </div>
-              <div class="hero-actions">
-                <button class="button" type="submit" data-i18n="searchButton">Search jobs</button>
-                <a class="button button-secondary" href="jobs-in-kochi.html" data-i18n="browseAllPages">Browse all pages</a>
-              </div>
-            </form>
-            <div id="searchResultsWrap" class="search-results-wrap">
-              <p id="searchResultsLabel" class="results-label" data-i18n="searchResultsLabel">Search results</p>
-              <div id="searchResults" class="result-grid"></div>
+            <div class="bg-white shadow-md rounded-lg p-4 min-w-[250px] border">
+                <h3 class="font-semibold text-sm">Data Analyst</h3>
+                <p class="text-gray-600 text-xs mt-1">Short description here.</p>
+                <button class="mt-3 bg-accent text-white px-3 py-1 rounded-lg text-sm">Apply on WhatsApp</button>
             </div>
-          </div>
+            <div class="bg-white shadow-md rounded-lg p-4 min-w-[250px] border">
+                <h3 class="font-semibold text-sm">Designer</h3>
+                <p class="text-gray-600 text-xs mt-1">Short description here.</p>
+                <button class="mt-3 bg-accent text-white px-3 py-1 rounded-lg text-sm">Apply on WhatsApp</button>
+            </div>
         </div>
-
-        <div class="hero-side">
-          <article class="hero-card accent-card">
-            <p class="eyebrow" data-i18n="launchCardEyebrow">Early stage notice</p>
-            <h2 data-i18n="launchCardTitle">We are actively collecting more listings.</h2>
-            <p data-i18n="launchCardText">Send a WhatsApp message now if you want free alerts when matching jobs are published. Early supporters help us build a stronger Kochi-focused job board.</p>
-            <a class="button" href="https://wa.me/916282520339?text=Hi%20Kerala%20Job%20Hub%2C%20please%20add%20me%20for%20free%20job%20alerts." data-i18n="launchCardButton">Get free job alerts</a>
-          </article>
-          <article class="hero-card mini-card">
-            <h3 data-i18n="trustTitle">Why this works</h3>
-            <ul class="mini-list">
-              <li data-i18n="trust1">Kochi-focused landing pages</li>
-              <li data-i18n="trust2">Direct WhatsApp apply flow</li>
-              <li data-i18n="trust3">Simple plans for local employers</li>
-            </ul>
-          </article>
-        </div>
-      </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="popularEyebrow">Popular searches</p>
-          <h2 data-i18n="popularTitle">Browse the job pages people search most</h2>
+    <!-- Pricing Plans -->
+    <section class="px-4 py-2 flex-1">
+        <div class="grid grid-cols-3 gap-2">
+            <div class="bg-white shadow-md rounded-lg p-3 border text-center">
+                <h3 class="font-semibold text-sm">Basic</h3>
+                <p class="text-xl font-bold text-forest">$99</p>
+                <ul class="text-xs mt-2 space-y-1">
+                    <li>• Feature 1</li>
+                    <li>• Feature 2</li>
+                </ul>
+                <button class="mt-2 bg-leaf text-white px-3 py-1 rounded-lg text-sm">Get Started</button>
+            </div>
+            <div class="bg-forest text-white shadow-md rounded-lg p-3 border text-center relative">
+                <span class="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-accent text-white px-2 py-1 rounded text-xs">Premium</span>
+                <h3 class="font-semibold text-sm">Premium</h3>
+                <p class="text-xl font-bold">$199</p>
+                <ul class="text-xs mt-2 space-y-1">
+                    <li>• Feature 1</li>
+                    <li>• Feature 2</li>
+                    <li>• Feature 3</li>
+                </ul>
+                <button class="mt-2 bg-accent text-white px-3 py-1 rounded-lg text-sm">Get Started</button>
+            </div>
+            <div class="bg-white shadow-md rounded-lg p-3 border text-center">
+                <h3 class="font-semibold text-sm">Enterprise</h3>
+                <p class="text-xl font-bold text-forest">$299</p>
+                <ul class="text-xs mt-2 space-y-1">
+                    <li>• Feature 1</li>
+                    <li>• Feature 2</li>
+                </ul>
+                <button class="mt-2 bg-leaf text-white px-3 py-1 rounded-lg text-sm">Get Started</button>
+            </div>
         </div>
-        <div class="chip-group">
-          <a href="jobs-in-kochi.html">Jobs in Kochi</a>
-          <a href="part-time-jobs-kochi.html">Part-time jobs in Kochi</a>
-          <a href="infopark-jobs-kochi.html">Infopark jobs Kochi</a>
-          <a href="fresher-jobs-kochi.html">Jobs in Kochi for freshers</a>
-          <a href="urgent-jobs-kochi.html">Urgent jobs Kochi</a>
-          <a href="work-from-home-jobs-kochi.html">Work from home jobs Kochi</a>
-          <a href="night-shift-jobs-kochi.html">Night shift jobs Kochi</a>
-          <a href="part-time-jobs-for-students-kochi.html">Student part-time jobs</a>
-        </div>
-      </div>
     </section>
 
-    <section class="section section-alt">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="featuredEyebrow">Featured jobs</p>
-          <h2 data-i18n="featuredTitle">Sample openings on Kerala Job Hub</h2>
-        </div>
-        <div class="job-grid featured-grid">
-        <article class="job-card">
-          <p class="job-tag">Infopark | Architect</p>
-          <h3>Senior Solution Architect / Principal Solution Architect</h3>
-          <p>Techversant Infotech Pvt Ltd | 10 to 15 years | Direct email apply</p>
-          <a class="text-link" href="companies/techversant-infotech-kochi.html">View full job details</a>
-        </article>
-        <article class="job-card">
-          <p class="job-tag">Infopark | Freshers</p>
-          <h3>Customer Support Executive</h3>
-          <p>Kakkanad, Kochi | Day shift | Salary up to Rs.18,000</p>
-          <a class="text-link" href="https://wa.me/916282520339?text=I%20am%20interested%20in%20the%20Customer%20Support%20Executive%20job%20listed%20on%20Kerala%20Job%20Hub">Apply via WhatsApp</a>
-        </article>
-        <article class="job-card">
-          <p class="job-tag">Accounts</p>
-          <h3>Junior Accountant</h3>
-          <p>Edappally, Kochi | Tally and GST | Salary up to Rs.22,000</p>
-          <a class="text-link" href="https://wa.me/916282520339?text=I%20am%20interested%20in%20the%20Junior%20Accountant%20job%20listed%20on%20Kerala%20Job%20Hub">Apply via WhatsApp</a>
-        </article>
-        <article class="job-card">
-          <p class="job-tag">Part-Time</p>
-          <h3>Evening Data Entry Assistant</h3>
-          <p>Palarivattom, Kochi | 4-hour shift | Good for students</p>
-          <a class="text-link" href="https://wa.me/916282520339?text=I%20am%20interested%20in%20the%20Evening%20Data%20Entry%20Assistant%20job%20listed%20on%20Kerala%20Job%20Hub">Apply via WhatsApp</a>
-        </article>
-        <article class="job-card">
-          <p class="job-tag">Urgent Hiring</p>
-          <h3>Delivery Driver</h3>
-          <p>Kochi city | Immediate joining | License required</p>
-          <a class="text-link" href="https://wa.me/916282520339?text=I%20am%20interested%20in%20the%20Delivery%20Driver%20job%20listed%20on%20Kerala%20Job%20Hub">Apply via WhatsApp</a>
-        </article>
-        <article class="job-card">
-          <p class="job-tag">SEO</p>
-          <h3>SEO Executive</h3>
-          <p>Infopark, Kochi | On-page SEO and audits | Full-time</p>
-          <a class="text-link" href="https://wa.me/916282520339?text=I%20am%20interested%20in%20the%20SEO%20Executive%20job%20listed%20on%20Kerala%20Job%20Hub">Apply via WhatsApp</a>
-        </article>
-        <article class="job-card">
-          <p class="job-tag">Remote</p>
-          <h3>Chat Support Associate</h3>
-          <p>Work from home | Rotational shift | Laptop required</p>
-          <a class="text-link" href="https://wa.me/916282520339?text=I%20am%20interested%20in%20the%20Chat%20Support%20Associate%20job%20listed%20on%20Kerala%20Job%20Hub">Apply via WhatsApp</a>
-        </article>
-        <article class="job-card">
-          <p class="job-tag">Night Shift</p>
-          <h3>International Voice Associate</h3>
-          <p>Kakkanad | Night allowance | Good English</p>
-          <a class="text-link" href="https://wa.me/916282520339?text=I%20am%20interested%20in%20the%20International%20Voice%20Associate%20job%20listed%20on%20Kerala%20Job%20Hub">Apply via WhatsApp</a>
-        </article>
-        <article class="job-card">
-          <p class="job-tag">Student Job</p>
-          <h3>Weekend Promoter</h3>
-          <p>Edappally | Saturday and Sunday shift | Students welcome</p>
-          <a class="text-link" href="https://wa.me/916282520339?text=I%20am%20interested%20in%20the%20Weekend%20Promoter%20job%20listed%20on%20Kerala%20Job%20Hub">Apply via WhatsApp</a>
-        </article>
-        </div>
-      </div>
+    <!-- Footer / Call to Action -->
+    <section class="bg-green-50 px-4 py-4 rounded-t-xl">
+        <h2 class="text-lg font-bold mb-3">Get Free Job Alerts</h2>
+        <input type="email" placeholder="Enter your email" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm mb-3">
+        <button class="w-full bg-accent text-white py-2 rounded-lg text-sm font-medium">Subscribe</button>
     </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="benefitsEyebrow">Employer value</p>
-          <h2 data-i18n="benefitsTitle">What employers get after posting a paid job</h2>
-        </div>
-        <div class="feature-grid employer-grid">
-          <article class="feature">
-            <h3 data-i18n="benefit1Title">Local visibility</h3>
-            <p data-i18n="benefit1Text">Your vacancy is published on a Kochi-focused page built for local search intent.</p>
-          </article>
-          <article class="feature">
-            <h3 data-i18n="benefit2Title">WhatsApp lead flow</h3>
-            <p data-i18n="benefit2Text">Candidates can contact quickly, and enquiries can be routed to your preferred action.</p>
-          </article>
-          <article class="feature">
-            <h3 data-i18n="benefit3Title">Social support</h3>
-            <p data-i18n="benefit3Text">Selected plans include Instagram and Facebook promotion for extra reach.</p>
-          </article>
-          <article class="feature">
-            <h3 data-i18n="benefit4Title">Business presence</h3>
-            <p data-i18n="benefit4Text">Higher plans include a dedicated employer block or business page with one photo and details.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-    <section class="section section-alt" id="pricing">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="pricingEyebrow">Pricing plans</p>
-          <h2 data-i18n="pricingTitle">Choose a posting package from Rs.199 to Rs.999. All plans stay live until the vacancy is filled, and higher plans add stronger SEO visibility.</h2>
-          <p class="contact-note">Prefer email for employer enquiries? Write to <a href="mailto:info@keralajobhub.com">info@keralajobhub.com</a></p>
-        </div>
-        <div class="pricing-grid">
-          <article class="plan-card">
-            <p class="plan-name" data-i18n="starterName">Starter</p>
-            <h3 class="plan-price" data-i18n="starterPrice">Rs.199</h3>
-            <p class="plan-description" data-i18n="starterDesc">Basic job ad for employers who want an affordable local listing with Google-indexable visibility.</p>
-            <ul class="plan-list">
-              <li data-i18n="starterF1">Standard job listing</li>
-              <li data-i18n="starterF2">Visible until the vacancy is filled</li>
-              <li data-i18n="starterF3">WhatsApp apply CTA</li>
-              <li data-i18n="starterF4">Published on one relevant job page and kept indexable for search</li>
-            </ul>
-            <a class="button" href="https://wa.me/916282520339?text=Hi%20Kerala%20Job%20Hub%2C%20I%20want%20the%20Starter%20plan%20for%20Rs.199." data-i18n="choosePlan">Choose on WhatsApp</a>
-          </article>
-          <article class="plan-card featured-plan">
-            <p class="plan-name" data-i18n="boostName">Boost</p>
-            <h3 class="plan-price" data-i18n="boostPrice">Rs.399</h3>
-            <p class="plan-description" data-i18n="boostDesc">Better visibility for employers who want more reach than a normal listing.</p>
-            <ul class="plan-list">
-              <li data-i18n="boostF1">Highlighted job listing</li>
-              <li data-i18n="boostF2">Visible until the vacancy is filled</li>
-              <li data-i18n="boostF3">Priority placement on homepage or category section</li>
-              <li data-i18n="boostF4">Instagram story mention with extra internal-linking support</li>
-            </ul>
-            <a class="button" href="https://wa.me/916282520339?text=Hi%20Kerala%20Job%20Hub%2C%20I%20want%20the%20Boost%20plan%20for%20Rs.399." data-i18n="choosePlan">Choose on WhatsApp</a>
-          </article>
-          <article class="plan-card">
-            <p class="plan-name" data-i18n="growthName">Growth</p>
-            <h3 class="plan-price" data-i18n="growthPrice">Rs.699</h3>
-            <p class="plan-description" data-i18n="growthDesc">Stronger promotion for employers hiring actively across Kochi.</p>
-            <ul class="plan-list">
-              <li data-i18n="growthF1">Premium job listing</li>
-              <li data-i18n="growthF2">Visible until the vacancy is filled</li>
-              <li data-i18n="growthF3">Instagram post + Facebook post</li>
-              <li data-i18n="growthF4">Featured visibility plus company intro, website link, and stronger SEO signals</li>
-            </ul>
-            <a class="button" href="https://wa.me/916282520339?text=Hi%20Kerala%20Job%20Hub%2C%20I%20want%20the%20Growth%20plan%20for%20Rs.699." data-i18n="choosePlan">Choose on WhatsApp</a>
-          </article>
-          <article class="plan-card">
-            <p class="plan-name" data-i18n="priorityName">Priority</p>
-            <h3 class="plan-price" data-i18n="priorityPrice">Rs.999</h3>
-            <p class="plan-description" data-i18n="priorityDesc">Maximum visibility for urgent or high-priority hiring campaigns.</p>
-            <ul class="plan-list">
-              <li data-i18n="priorityF1">Top-priority job listing</li>
-              <li data-i18n="priorityF2">Visible until the vacancy is filled</li>
-              <li data-i18n="priorityF3">Instagram + Facebook promotion</li>
-              <li data-i18n="priorityF4">Dedicated business page with photo, location, timings, contact, socials, openings, and homepage spotlight</li>
-            </ul>
-            <a class="button" href="https://wa.me/916282520339?text=Hi%20Kerala%20Job%20Hub%2C%20I%20want%20the%20Priority%20plan%20for%20Rs.999." data-i18n="choosePlan">Choose on WhatsApp</a>
-          </article>
-        </div>
-        <p class="contact-note">SEO benefits are included inside the higher ad plans. Sample business page: <a href="companies/techauditpros-kochi.html">TechAuditPros Kochi</a></p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container support-box">
-        <div>
-          <p class="eyebrow" data-i18n="supportEyebrow">Candidate support</p>
-          <h2 data-i18n="supportTitle">Join early and get free job alerts</h2>
-          <p data-i18n="supportText">If we do not yet have the exact job you need, message us on WhatsApp. We are in the acquiring stage and will share relevant openings with early supporters at no cost.</p>
-        </div>
-        <a class="button" href="https://wa.me/916282520339?text=Hi%20Kerala%20Job%20Hub%2C%20please%20share%20future%20jobs%20with%20me%20for%20free." data-i18n="supportButton">Message for free alerts</a>
-      </div>
-    </section>
-
-    <section class="section section-alt">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="linksEyebrow">Main pages</p>
-          <h2 data-i18n="linksTitle">Browse key job pages</h2>
-        </div>
-        <div class="link-grid">
-          <a href="jobs-in-kochi.html">Jobs in Kochi</a>
-          <a href="part-time-jobs-kochi.html">Part-Time Jobs in Kochi</a>
-          <a href="infopark-jobs-kochi.html">Infopark Jobs Kochi</a>
-          <a href="fresher-jobs-kochi.html">Fresher Jobs Kochi</a>
-          <a href="urgent-jobs-kochi.html">Urgent Jobs Kochi</a>
-          <a href="accountant-jobs-kochi.html">Accountant Jobs Kochi</a>
-          <a href="driver-jobs-kochi.html">Driver Jobs Kochi</a>
-          <a href="data-entry-jobs-kochi.html">Data Entry Jobs Kochi</a>
-          <a href="digital-marketing-jobs-kochi.html">Digital Marketing Jobs Kochi</a>
-          <a href="work-from-home-jobs-kochi.html">Work From Home Jobs Kochi</a>
-          <a href="night-shift-jobs-kochi.html">Night Shift Jobs Kochi</a>
-          <a href="part-time-jobs-for-students-kochi.html">Part-Time Jobs for Students Kochi</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <h2>Kerala Job Hub</h2>
-        <p data-i18n="footerText">Local job listings for Kochi, Infopark, and nearby areas in Kerala.</p>
-      </div>
-      <div>
-        <h2 data-i18n="footerLinks">Quick links</h2>
-        <a href="jobs-in-kochi.html">Jobs in Kochi</a>
-        <a href="part-time-jobs-kochi.html">Part-Time Jobs</a>
-        <a href="infopark-jobs-kochi.html">Infopark Jobs</a>
-        <a href="fresher-jobs-kochi.html">Fresher Jobs</a>
-      </div>
-      <div>
-        <h2 data-i18n="footerSupport">Support</h2>
-        <a href="https://wa.me/916282520339?text=Hi%20Kerala%20Job%20Hub%2C%20I%20want%20to%20post%20a%20job." data-i18n="footerPost">Post a job on WhatsApp</a>
-        <a href="https://wa.me/916282520339?text=Hi%20Kerala%20Job%20Hub%2C%20please%20add%20me%20for%20free%20job%20alerts." data-i18n="footerAlert">Get free job alerts</a>
-        <a href="mailto:info@keralajobhub.com">info@keralajobhub.com</a>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <p data-i18n="footerRights">Copyright 2026 Kerala Job Hub. All rights reserved.</p>
-    </div>
-  </footer>
 </body>
-</html>
+</html></content>
+<parameter name="filePath">index.html
