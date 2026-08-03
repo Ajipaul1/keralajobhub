@@ -39,7 +39,8 @@ Confirm your agency's operational model (Free vs. Monetized) so we can configure
 Regards,
 
 Aji Paul
-Founder, Kerala Job Hub"""
+Founder, Kerala Job Hub
+Phone: +91 6282520339"""
 
 def send_email(to_email, agency_name, is_test=False):
     if not SMTP_PASSWORD:
