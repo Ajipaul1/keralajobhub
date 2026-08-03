@@ -78,8 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            // Send to Vercel Backend API
-            const response = await fetch('/api/apply', {
+            // Send to Vercel Backend API (using absolute URL since domain DNS is not on Vercel)
+            const response = await fetch('https://keralajobhub.vercel.app/api/apply', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
