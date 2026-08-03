@@ -1,0 +1,13 @@
+{
+  "name": "keralajobhub",
+  "version": "1.0.0",
+  "description": "Kerala Job Hub",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "nodemailer": "^6.9.7"
+  }
+}
