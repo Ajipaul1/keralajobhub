@@ -39,8 +39,9 @@ BODY_TEMPLATE = """<html>
 
 <p>Regards,<br><br>
 <strong>Aji Paul</strong><br>
-Founder, <a href="https://keralajobhub.com" style="color: #059669; font-weight: bold; text-decoration: underline;">Kerala Job Hub</a><br>
-Phone: <a href="tel:+916282520339">+91 6282520339</a> | <a href="https://wa.me/916282520339" style="color: #25D366; font-weight: bold; text-decoration: none;">WhatsApp Us</a></p>
+Founder, Kerala Job Hub<br>
+Phone: <a href="tel:+916282520339">+91 6282520339</a> | <a href="https://wa.me/916282520339" style="color: #25D366; font-weight: bold; text-decoration: none;">WhatsApp Us</a><br>
+Website: <a href="https://keralajobhub.com" style="color: #059669; font-weight: bold; text-decoration: underline;">https://keralajobhub.com</a></p>
 </body>
 </html>"""
 
