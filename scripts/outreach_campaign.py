@@ -18,29 +18,31 @@ CSV_FILE = 'consultancy_emails.csv'
 
 SUBJECT_TEMPLATE = "B2B Integration: Candidate Sourcing & Revenue Protocol for {agency_name}"
 
-BODY_TEMPLATE = """To the {agency_name} Leadership Team,
+BODY_TEMPLATE = """<html>
+<body>
+<p>To the <strong>{agency_name}</strong> Leadership Team,</p>
 
-We operate Kerala Job Hub, a targeted employment infrastructure routing high-intent candidates to verified agencies. We have audited your current pipeline and identified your consultancy as a viable partner for our lead distribution network.
+<p>We operate Kerala Job Hub, a targeted employment infrastructure routing high-intent candidates to verified agencies. We have audited your current pipeline and identified your consultancy as a viable partner for our lead distribution network.</p>
 
-We are opening our platform to host your active requisitions. We will deploy our internal SEO and social distribution architecture to drive targeted candidates directly to your funnel.
+<p>We are opening our platform to host your active requisitions. We will deploy our internal SEO and social distribution architecture to drive targeted candidates directly to your funnel.</p>
 
-Our B2B operational terms are strictly performance-based:
+<p>Our B2B operational terms are strictly performance-based:</p>
+<ul>
+<li><strong>Standard Requisitions (Zero-Fee):</strong> If your placement process is entirely free for the candidate, we distribute and promote your listings at zero cost.</li>
+<li><strong>Monetized Requisitions (Placement Fee):</strong> For roles where your agency collects a placement fee, our infrastructure operates on a 33% revenue-share model, payable only after a successful candidate transition and monetization.</li>
+<li><strong>Gulf / International Placements:</strong> Custom service-level agreements (SLAs) will be drafted following an audit of your international pipeline.</li>
+</ul>
 
-Standard Requisitions (Zero-Fee): If your placement process is entirely free for the candidate, we distribute and promote your listings at zero cost.
+<p>We absorb the marketing overhead and candidate acquisition costs. You only share capital on successfully monetized leads.</p>
 
-Monetized Requisitions (Placement Fee): For roles where your agency collects a placement fee, our infrastructure operates on a 33% revenue-share model, payable only after a successful candidate transition and monetization.
+<p>Confirm your agency's operational model (Free vs. Monetized) so we can configure your profile and authorize your team to begin uploading requisitions to the platform.</p>
 
-Gulf / International Placements: Custom service-level agreements (SLAs) will be drafted following an audit of your international pipeline.
-
-We absorb the marketing overhead and candidate acquisition costs. You only share capital on successfully monetized leads.
-
-Confirm your agency's operational model (Free vs. Monetized) so we can configure your profile and authorize your team to begin uploading requisitions to the platform.
-
-Regards,
-
-Aji Paul
-Founder, Kerala Job Hub
-Phone: +91 6282520339"""
+<p>Regards,<br><br>
+<strong>Aji Paul</strong><br>
+Founder, <a href="https://keralajobhub.com" style="color: #059669; font-weight: bold; text-decoration: underline;">Kerala Job Hub</a><br>
+Phone: <a href="tel:+916282520339">+91 6282520339</a> | <a href="https://wa.me/916282520339" style="color: #25D366; font-weight: bold; text-decoration: none;">WhatsApp Us</a></p>
+</body>
+</html>"""
 
 def send_email(to_email, agency_name, is_test=False):
     if not SMTP_PASSWORD:
@@ -54,9 +56,9 @@ def send_email(to_email, agency_name, is_test=False):
 
     # Convert line breaks to HTML for better formatting, or just send as plain text. 
     # Since it's a professional B2B email, plain text often bypasses spam filters better than HTML.
-    # We will send as plain text to ensure maximum deliverability.
+    # Convert to HTML
     body_text = BODY_TEMPLATE.format(agency_name=agency_name)
-    msg.attach(MIMEText(body_text, 'plain'))
+    msg.attach(MIMEText(body_text, 'html'))
 
     try:
         server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
@@ -65,6 +67,12 @@ def send_email(to_email, agency_name, is_test=False):
         server.sendmail(SENDER_EMAIL, msg['To'], msg.as_string())
         server.close()
         print(f"[{'TEST ' if is_test else ''}SUCCESS] Sent email to {msg['To']} (Agency: {agency_name})")
+        
+        # Log to prevent duplicates
+        if not is_test:
+            with open("sent.log", "a", encoding="utf-8") as logf:
+                logf.write(email_address + "\n")
+        
         return True
     except Exception as e:
         print(f"[{'TEST ' if is_test else ''}FAILED] Could not send to {msg['To']}. Error: {e}")
@@ -89,6 +97,11 @@ def run_campaign(is_test=False):
     print("--- RUNNING LIVE CAMPAIGN ---")
     print(f"Total leads found: {len(leads)}")
     
+    sent_list = []
+    if os.path.exists("sent.log"):
+        with open("sent.log", "r", encoding="utf-8") as logf:
+            sent_list = [line.strip() for line in logf.readlines()]
+            
     success_count = 0
     for index, row in enumerate(leads):
         email = row.get('Email Address', '').strip()
@@ -96,6 +109,10 @@ def run_campaign(is_test=False):
         
         if not email:
             print(f"[SKIPPED] {agency} has no email address.")
+            continue
+            
+        if email in sent_list:
+            print(f"[SKIPPED] Already sent to {email} ({agency}).")
             continue
             
         success = send_email(email, agency, is_test=False)
