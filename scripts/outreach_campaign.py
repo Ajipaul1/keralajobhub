@@ -115,7 +115,7 @@ def send_email(to_email, agency_name, is_test=False):
         # Log to prevent duplicates
         if not is_test:
             with open("sent.log", "a", encoding="utf-8") as logf:
-                logf.write(email_address + "\n")
+                logf.write(to_email + "\n")
         
         return True
     except Exception as e:
@@ -138,11 +138,11 @@ def run_campaign(is_test=False):
         print("Test complete. Check the inbox of info@keralajobhub.com.")
         return
 
-    # Skip the first 15 leads because zombie processes already spammed them
-    if len(leads) > 15:
-        leads = leads[15:]
+    # Skip the first 20 leads (up to and including Aspire Kerala)
+    if len(leads) > 20:
+        leads = leads[20:]
     else:
-        print("Warning: Less than 15 leads found. Skipping all.")
+        print("Warning: Less than 20 leads found. Skipping all.")
         leads = []
 
     print("--- RUNNING LIVE CAMPAIGN ---")
