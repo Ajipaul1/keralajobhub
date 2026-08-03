@@ -20,7 +20,7 @@ SUBJECT_TEMPLATE = "B2B Integration: Candidate Sourcing & Revenue Protocol for {
 
 BODY_TEMPLATE = """<html>
 <body>
-<p>To the <strong>{agency_name}</strong> Leadership Team,</p>
+<p>To the CEO of <strong>{agency_name}</strong>,</p>
 
 <p>We operate <a href="https://keralajobhub.com" style="color: #059669; font-weight: bold; text-decoration: underline;">Kerala Job Hub</a>, a targeted employment infrastructure routing high-intent candidates to verified agencies. We have audited your current pipeline and identified your consultancy as a viable partner for our lead distribution network.</p>
 
@@ -37,11 +37,20 @@ BODY_TEMPLATE = """<html>
 
 <p>Confirm your agency's operational model (Free vs. Monetized) so we can configure your profile and authorize your team to begin uploading requisitions to the platform.</p>
 
-<p>Regards,<br><br>
-<strong>Aji Paul</strong><br>
-Founder, Kerala Job Hub<br>
-Phone: <a href="tel:+916282520339">+91 6282520339</a> | <a href="https://wa.me/916282520339" style="color: #25D366; font-weight: bold; text-decoration: none;">WhatsApp Us</a><br>
-Website: <a href="https://keralajobhub.com" style="color: #059669; font-weight: bold; text-decoration: underline;">https://keralajobhub.com</a></p>
+<table cellpadding="0" cellspacing="0" border="0" style="margin-top: 20px;">
+    <tr>
+        <td style="padding-right: 15px; vertical-align: top;">
+            <img src="https://techauditpros.com/assets/images/founder/aji-paul.webp" alt="Aji Paul" width="80" style="border-radius: 50%; max-width: 80px; height: auto;">
+        </td>
+        <td style="vertical-align: top;">
+            <p style="margin: 0; padding: 0;">Regards,<br><br>
+            <strong>Aji Paul</strong><br>
+            Founder, Kerala Job Hub<br>
+            Phone: <a href="tel:+916282520339">+91 6282520339</a> | <a href="https://wa.me/916282520339" style="color: #25D366; font-weight: bold; text-decoration: none;">WhatsApp Us</a><br>
+            Website: <a href="https://keralajobhub.com" style="color: #059669; font-weight: bold; text-decoration: underline;">https://keralajobhub.com</a></p>
+        </td>
+    </tr>
+</table>
 </body>
 </html>"""
 
@@ -94,6 +103,13 @@ def run_campaign(is_test=False):
         send_email(first_lead['Email Address'], first_lead['Consultancy Name'], is_test=True)
         print("Test complete. Check the inbox of info@keralajobhub.com.")
         return
+
+    # Skip the first 7 leads as requested
+    if len(leads) > 7:
+        leads = leads[7:]
+    else:
+        print("Warning: Less than 7 leads found. Skipping all.")
+        leads = []
 
     print("--- RUNNING LIVE CAMPAIGN ---")
     print(f"Total leads found: {len(leads)}")
