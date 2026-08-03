@@ -2,8 +2,8 @@
 const supabaseUrl = 'https://syclttldcjmpykgcmzld.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN5Y2x0dGxkY2ptcHlrZ2NtemxkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU3MzYzMjYsImV4cCI6MjEwMTMxMjMyNn0.Kze7Sve_PhzSmqAdaPG01YFgXBMDWucTEUUS4DyO0ec';
 
-// The client is available on the window object because we loaded it via CDN in the HTML
-const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+// The client is available globally as `supabase` because we loaded it via CDN in the HTML
+const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
 // Function to handle the WhatsApp Job Alert Signup
 async function handleWhatsAppSignup(event) {
@@ -30,7 +30,7 @@ async function handleWhatsAppSignup(event) {
     submitBtn.innerHTML = "Processing...";
 
     try {
-        const { error } = await supabase
+        const { error } = await supabaseClient
             .from('whatsapp_leads')
             .insert([
                 { name: name, phone: phone }
@@ -44,16 +44,14 @@ async function handleWhatsAppSignup(event) {
 
     } catch (error) {
         console.error("Error saving lead:", error);
-        alert("Something went wrong. Please try again.");
+        alert("Something went wrong. Please check your connection and try again.");
         submitBtn.disabled = false;
         submitBtn.innerHTML = "Sign Up for Alerts";
     }
 }
 
-// Make it available globally if needed, and attach to form
-document.addEventListener("DOMContentLoaded", () => {
-    const waForm = document.getElementById('whatsapp-alert-form');
-    if (waForm) {
-        waForm.addEventListener('submit', handleWhatsAppSignup);
-    }
-});
+// Attach to form immediately (script is loaded with defer, so DOM is ready)
+const waForm = document.getElementById('whatsapp-alert-form');
+if (waForm) {
+    waForm.addEventListener('submit', handleWhatsAppSignup);
+}
