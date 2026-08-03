@@ -22,7 +22,7 @@ BODY_TEMPLATE = """<html>
 <body>
 <p>To the <strong>{agency_name}</strong> Leadership Team,</p>
 
-<p>We operate Kerala Job Hub, a targeted employment infrastructure routing high-intent candidates to verified agencies. We have audited your current pipeline and identified your consultancy as a viable partner for our lead distribution network.</p>
+<p>We operate <a href="https://keralajobhub.com" style="color: #059669; font-weight: bold; text-decoration: underline;">Kerala Job Hub</a>, a targeted employment infrastructure routing high-intent candidates to verified agencies. We have audited your current pipeline and identified your consultancy as a viable partner for our lead distribution network.</p>
 
 <p>We are opening our platform to host your active requisitions. We will deploy our internal SEO and social distribution architecture to drive targeted candidates directly to your funnel.</p>
 
