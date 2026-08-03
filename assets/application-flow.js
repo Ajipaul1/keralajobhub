@@ -24,6 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch (err) {
                 currentJobTitle = 'General Application';
             }
+            
+            // Display Job Title in Modal UI
+            document.getElementById('modal-job-title-display').innerText = currentJobTitle;
 
             // Show modal
             modal.classList.remove('hidden');

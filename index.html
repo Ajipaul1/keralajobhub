@@ -291,67 +291,6 @@
             </div>
         </div>
     </section>
-<script>
-    // Auto-scroll for the featured jobs carousel on mobile
-    document.addEventListener("DOMContentLoaded", () => {
-        const carousel = document.getElementById("featured-jobs-carousel");
-        if (!carousel) return;
-
-        let scrollInterval;
-        let isUserInteracting = false;
-        
-        // Configuration
-        const scrollSpeed = 1; // Pixels per frame
-        const scrollDelay = 3000; // Delay before restarting scroll after interaction
-
-        const startAutoScroll = () => {
-            // Only auto-scroll on mobile (where overflow-visible is NOT applied by md: classes)
-            if (window.innerWidth >= 768) return; 
-            
-            scrollInterval = setInterval(() => {
-                if (!isUserInteracting) {
-                    if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 1) {
-                        // Reached the end, scroll back to start
-                        carousel.scrollLeft = 0;
-                    } else {
-                        carousel.scrollLeft += scrollSpeed;
-                    }
-                }
-            }, 30); // ~30fps
-        };
-
-        const stopAutoScroll = () => {
-            clearInterval(scrollInterval);
-        };
-
-        // Pause auto-scroll on interaction
-        ['touchstart', 'mousedown', 'wheel'].forEach(evt => {
-            carousel.addEventListener(evt, () => {
-                isUserInteracting = true;
-                stopAutoScroll();
-            }, { passive: true });
-        });
-
-        // Resume after interaction ends
-        ['touchend', 'mouseup', 'mouseleave'].forEach(evt => {
-            carousel.addEventListener(evt, () => {
-                setTimeout(() => {
-                    isUserInteracting = false;
-                    startAutoScroll();
-                }, scrollDelay);
-            });
-        });
-
-        // Start initially
-        startAutoScroll();
-        
-        // Handle window resize to stop/start if crossing breakpoint
-        window.addEventListener('resize', () => {
-            stopAutoScroll();
-            startAutoScroll();
-        });
-    });
-</script>
     <!-- Job Application Modal (Hidden by Default) -->
     <div id="job-application-modal" class="fixed inset-0 bg-black/60 z-50 hidden items-center justify-center p-4 backdrop-blur-sm">
         <div class="bg-white rounded-xl shadow-2xl w-full max-w-md overflow-hidden flex flex-col max-h-[90vh]">
@@ -365,6 +304,10 @@
             
             <!-- Body -->
             <div class="p-5 overflow-y-auto scrollbar-thin">
+                <div class="mb-4 bg-emerald-50 border border-emerald-100 rounded-lg p-3 text-emerald-800">
+                    <p class="text-xs font-semibold uppercase tracking-wider text-emerald-600 mb-0.5">Applying For</p>
+                    <p id="modal-job-title-display" class="font-bold text-sm">Loading...</p>
+                </div>
                 <p class="text-sm text-gray-600 mb-4">Please fill out this quick profile to apply. We will redirect you to WhatsApp immediately after.</p>
                 <form id="job-application-form" class="space-y-4">
                     
