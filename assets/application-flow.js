@@ -64,6 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
             age: document.getElementById('modal-age').value,
             qualification: document.getElementById('modal-qualification').value,
             experience: document.getElementById('modal-experience').value,
+            work_type: document.getElementById('modal-work-type').value,
+            relocate: document.getElementById('modal-relocate').value,
             job_title: currentJobTitle
         };
 

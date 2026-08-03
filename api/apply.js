@@ -6,7 +6,7 @@ export default async function handler(req, res) {
         return res.status(405).json({ error: 'Method Not Allowed' });
     }
 
-    const { name, phone, district, place, age, qualification, experience, job_title } = req.body;
+    const { name, phone, district, place, age, qualification, experience, job_title, work_type, relocate } = req.body;
 
     if (!name || !phone || !district || !place || !age || !qualification || !experience || !job_title) {
         return res.status(400).json({ error: 'Missing required fields' });
@@ -21,7 +21,7 @@ export default async function handler(req, res) {
         // 1. Insert into Supabase
         const { error: dbError } = await supabase
             .from('job_applications')
-            .insert([{ name, phone, district, place, age: parseInt(age), qualification, experience, job_title }]);
+            .insert([{ name, phone, district, place, age: parseInt(age), qualification, experience, job_title, work_type, relocate }]);
 
         if (dbError) {
             console.error('Supabase Error:', dbError);
@@ -53,6 +53,8 @@ export default async function handler(req, res) {
                         <tr><td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">District</td><td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">${district}</td></tr>
                         <tr><td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Qualification</td><td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">${qualification}</td></tr>
                         <tr><td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Experience</td><td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">${experience}</td></tr>
+                        <tr><td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Work Preference</td><td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">${work_type}</td></tr>
+                        <tr><td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Willing to Relocate?</td><td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">${relocate}</td></tr>
                     </table>
                 </div>
             `;
