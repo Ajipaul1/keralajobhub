@@ -138,11 +138,11 @@ def run_campaign(is_test=False):
         print("Test complete. Check the inbox of info@keralajobhub.com.")
         return
 
-    # Skip the first 7 leads as requested
-    if len(leads) > 7:
-        leads = leads[7:]
+    # Skip the first 15 leads because zombie processes already spammed them
+    if len(leads) > 15:
+        leads = leads[15:]
     else:
-        print("Warning: Less than 7 leads found. Skipping all.")
+        print("Warning: Less than 15 leads found. Skipping all.")
         leads = []
 
     print("--- RUNNING LIVE CAMPAIGN ---")
