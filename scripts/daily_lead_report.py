@@ -13,8 +13,11 @@ SERVICE_ROLE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSI
 # Using environment variables so you don't hardcode passwords in the repo
 SMTP_SERVER = os.environ.get('SMTP_SERVER', 'smtp.gmail.com')
 SMTP_PORT = 587
-SMTP_USER = os.environ.get('SMTP_USER', 'info@keralajobhub.com')
+SMTP_USER = os.environ.get('SMTP_USER', 'ajipaul96@gmail.com') # Login username
 SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD', '') # Requires user to set this
+
+SENDER_EMAIL = 'info@keralajobhub.com'
+RECEIVER_EMAIL = 'info@keralajobhub.com'
 
 def fetch_leads():
     try:
@@ -38,8 +41,8 @@ def send_email_report(leads):
         return
 
     msg = MIMEMultipart()
-    msg['From'] = SMTP_USER
-    msg['To'] = SMTP_USER
+    msg['From'] = SENDER_EMAIL
+    msg['To'] = RECEIVER_EMAIL
     msg['Subject'] = f"📊 Daily WhatsApp Lead Report ({len(leads)} New Registrations)"
 
     body = f"""
@@ -69,9 +72,9 @@ def send_email_report(leads):
         server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
         server.starttls()
         server.login(SMTP_USER, SMTP_PASSWORD)
-        server.sendmail(SMTP_USER, SMTP_USER, msg.as_string())
+        server.sendmail(SENDER_EMAIL, RECEIVER_EMAIL, msg.as_string())
         server.close()
-        print("Report successfully sent to", SMTP_USER)
+        print(f"Report successfully sent to {RECEIVER_EMAIL} from {SENDER_EMAIL}")
     except Exception as e:
         print(f"SMTP error: {e}")
 
