@@ -13,7 +13,7 @@ SERVICE_ROLE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSI
 # Using environment variables so you don't hardcode passwords in the repo
 SMTP_SERVER = os.environ.get('SMTP_SERVER', 'smtp.gmail.com')
 SMTP_PORT = 587
-SMTP_USER = 'info@keralajobhub.com'
+SMTP_USER = os.environ.get('SMTP_USER', 'info@keralajobhub.com')
 SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD', '') # Requires user to set this
 
 def fetch_leads():
