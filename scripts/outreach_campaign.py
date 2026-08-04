@@ -46,6 +46,10 @@ BODY_TEMPLATE = """<!DOCTYPE html>
 <body>
 <div style="background-color: #f9fafb; padding: 40px 20px;">
     <div class="email-container">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <img src="https://keralajobhub.com/assets/logo.png" alt="Kerala Job Hub Logo" style="max-width: 250px; height: auto;">
+        </div>
+        
         <div class="content">
             <p><strong>{agency_name}</strong> Executive Leadership,</p>
 

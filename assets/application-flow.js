@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Select all WhatsApp Apply buttons (excluding the generic "HI" alert signup button)
-    const applyButtons = document.querySelectorAll('a[href^="https://wa.me/"]:not([href$="text=HI"])');
+    // Select all WhatsApp Apply buttons using the data attribute instead of href to prevent bypass
+    const applyButtons = document.querySelectorAll('[data-whatsapp-url]');
     const modal = document.getElementById('job-application-modal');
     const form = document.getElementById('job-application-form');
     const closeBtn = document.getElementById('close-modal-btn');
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', (e) => {
             e.preventDefault(); // Stop immediate redirect
             
-            currentWhatsAppUrl = btn.href;
+            currentWhatsAppUrl = btn.getAttribute('data-whatsapp-url');
             
             // Extract job title from the text param if possible, or fallback to generic
             try {
