@@ -59,6 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.innerHTML = 'Submitting...';
 
         // Gather Data
+        const shiftPreference = document.getElementById('modal-shift').value;
+        const baseWorkType = document.getElementById('modal-work-type').value;
+        
         const formData = {
             name: document.getElementById('modal-name').value.trim(),
             phone: document.getElementById('modal-phone').value.trim(),
@@ -67,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
             age: document.getElementById('modal-age').value,
             qualification: document.getElementById('modal-qualification').value,
             experience: document.getElementById('modal-experience').value,
-            work_type: document.getElementById('modal-work-type').value,
+            work_type: `${baseWorkType} (${shiftPreference})`,
             relocate: document.getElementById('modal-relocate').value,
             job_title: currentJobTitle
         };
