@@ -107,4 +107,20 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.innerHTML = 'Submit & Apply on WhatsApp';
         }
     });
+
+    // Check for incoming apply parameter from SEO pages
+    const urlParams = new URLSearchParams(window.location.search);
+    const applyParam = urlParams.get('apply');
+    if (applyParam) {
+        currentJobTitle = applyParam;
+        currentWhatsAppUrl = `https://wa.me/916282520339?text=I am interested in the ${encodeURIComponent(applyParam)} job listed on Kerala Job Hub`;
+        
+        document.getElementById('modal-job-title-display').innerText = currentJobTitle;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+        
+        // Remove the parameter from URL so if they refresh, it doesn't pop up again
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
 });
