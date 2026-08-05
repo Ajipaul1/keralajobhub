@@ -10,22 +10,68 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="shortcut icon" href="assets/favicon.svg">
   <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: { preflight: false },
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        'forest': '#1B4332',
+                        'accent': '#52B788',
+                        'leaf': '#40916C',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-wrap">
-      <a class="brand brand-with-logo" href="index.html" aria-label="Kerala Job Hub home">
-        <img class="brand-logo" src="assets/kerala-job-hub-logo.svg" alt="Kerala Job Hub">
-      </a>
-      <nav class="site-nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="part-time-jobs-kochi.html">Part-Time</a>
-        <a href="jobs-in-kochi.html">Jobs in Kochi</a>
-        <a href="fresher-jobs-kochi.html">Freshers</a>
-        <a class="button button-small" href="#post-a-job">Post a Job</a>
-      </nav>
-    </div>
-  </header>
+  <!-- Header -->
+    <header class="bg-forest text-white rounded-b-xl px-4 py-3">
+        <div class="flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="assets/logo.png" alt="Kerala Job Hub Logo" class="h-10 w-auto object-contain mr-2">
+                <h1 class="text-lg font-bold sr-only">Kerala Job Hub</h1>
+            </a>
+            <button class="text-white text-2xl">☰</button>
+        </div>
+        <nav class="mt-2">
+            <div class="flex space-x-4 text-sm">
+                <a href="#" class="text-white hover:text-accent">Your Resume</a>
+                <a href="#" class="text-white hover:text-accent">Companies</a>
+                
+                <!-- Job Categories Dropdown -->
+                <div class="relative group">
+                    <button class="text-white hover:text-accent flex items-center focus:outline-none">
+                        Browse Jobs
+                        <svg class="w-3.5 h-3.5 ml-1 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <!-- Dropdown Menu -->
+                    <div class="absolute right-0 sm:left-0 pt-2 w-56 hidden group-hover:block group-focus-within:block z-[100]">
+                        <div class="bg-white rounded-lg shadow-xl border border-gray-100 py-2">
+                            <div class="max-h-[60vh] overflow-y-auto scrollbar-thin">
+                                <a href="jobs-in-kochi.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-green-50 hover:text-forest font-medium transition">All Jobs in Kochi</a>
+                                <a href="fresher-jobs-kochi.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-forest transition">Fresher Jobs</a>
+                                <a href="part-time-jobs-kochi.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-forest transition">Part-Time Jobs</a>
+                                <a href="part-time-jobs-for-students-kochi.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-forest transition">Jobs for Students</a>
+                                <a href="work-from-home-jobs-kochi.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-forest transition">Work From Home</a>
+                                <a href="night-shift-jobs-kochi.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-forest transition">Night Shift Jobs</a>
+                                <a href="urgent-jobs-kochi.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-forest transition">Urgent Hiring</a>
+                                <a href="infopark-jobs-kochi.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-forest transition">Infopark Jobs</a>
+                                <a href="data-entry-jobs-kochi.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-forest transition">Data Entry Jobs</a>
+                                <a href="accountant-jobs-kochi.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-forest transition">Accountant Jobs</a>
+                                <a href="digital-marketing-jobs-kochi.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-forest transition">Digital Marketing</a>
+                                <a href="driver-jobs-kochi.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-forest transition">Driver Jobs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
   <main>
     <section class="hero hero-inner">
       <div class="container narrow">
